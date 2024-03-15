@@ -1,0 +1,63 @@
+﻿@model StudentManagementSystem.Models.Login
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+
+<link href="/css/site.css" rel="stylesheet" type="text/css" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+<form asp-action="Login" class="mx-1 mx-md-4 ">
+    <body class=" login-page">
+        <div class="login-box mt-5">
+
+            <div class="login-logo text-margin ">
+                <a href="../../index2.html"><b>Admin</b>LTE</a>
+            </div>
+            <div class="card margin-left">
+                <div class="card-body login-card-body left-5 ms-5">
+                    <p class="login-box-msg">Sign in to start your session</p>
+
+                    <form asp-action="UpdatePassword" asp-controller="UsersController" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+
+                            <input asp-for="Username" class="form-control" placeholder="UserName" pattern="^\S+$" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                            <span class="badge"></span>
+                        </div>
+                        <div class="form-group">
+
+                            <input asp-for="Password" class="form-control" placeholder="Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                            <span class="fas fa-lock"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <!-- /.login-box -->
+            <!-- jQuery -->
+            <script src="../../plugins/jquery/jquery.min.js"></script>
+            <!-- Bootstrap 4 -->
+            <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- AdminLTE App -->
+            <script src="../../dist/js/adminlte.min.js"></script>
+        </div>
+    </body>
+</form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

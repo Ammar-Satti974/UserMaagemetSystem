@@ -1,0 +1,36 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Starter</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="content-wrapper">
+        @{
+            ViewData["Title"] = "Dashbaord";
+            Layout = "~/Views/Shared/_Layout.cshtml";
+        }
+        <section class="vh-100">
+            <div class="container h-100">
+                <h1 class="m-0">Dashboard</h1>
+                <div class="small-box bg-warning" style="width:250px;height:150px; padding-left:1rem;">
+                    <div class="inner">
+                        <h3>@ViewData["UserRegistered"] </h3>
+                        <p>User Registrations</p>
+                    </div>
+                    <div class="icon">
+                        <i class='fas fa-user-plus' style='font-size:54px'></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
